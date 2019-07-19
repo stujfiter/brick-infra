@@ -12,6 +12,8 @@ Resources:
           !Sub |
             #!/bin/bash -xe
             sudo apt-get update
-            sudo apt install docker.io -y
+            sudo apt-get install python3-pip -y
+            pip3 install awscli --upgrade
+            sudo apt-get install docker.io -y
             sudo systemctl start docker
             sudo systemctl enable docker
