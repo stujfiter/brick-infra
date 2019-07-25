@@ -1,3 +1,6 @@
+Parameters:
+  PostgresPwd:
+    Type: String
 Resources:
   MyEC2Instance:
     Type: "AWS::EC2::Instance"
@@ -12,8 +15,14 @@ Resources:
           !Sub |
             #!/bin/bash -xe
             sudo apt-get update
+            # Install AWS CLI
             sudo apt-get install python3-pip -y
             pip3 install awscli --upgrade
+            # Install Docker
             sudo apt-get install docker.io -y
             sudo systemctl start docker
             sudo systemctl enable docker
+            # Install Postgresql
+            sudo apt-get install postgresql -y
+            echo "host all all 0.0.0.0/0 md5" | sudo tee -a /etc/postgresql/10/main/pg_hba.conf
+            sudo -u postgres psql -c "ALTER USER postgres PASSWORD '${PostgresPwd}';"
