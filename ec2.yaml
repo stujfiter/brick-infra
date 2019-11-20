@@ -26,3 +26,4 @@ Resources:
             sudo apt-get install postgresql -y
             echo "host all all 0.0.0.0/0 md5" | sudo tee -a /etc/postgresql/10/main/pg_hba.conf
             sudo -u postgres psql -c "ALTER USER postgres PASSWORD '${PostgresPwd}';"
+            sudo -u postgres psql -c "CREATE DATABASE brick;"

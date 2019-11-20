@@ -5,138 +5,6 @@
             "Instances": [
                 {
                     "AmiLaunchIndex": 0,
-                    "ImageId": "ami-0cb72367e98845d43",
-                    "InstanceId": "i-0e56be5ce001192e0",
-                    "InstanceType": "t2.micro",
-                    "KeyName": "korey-earl-aws",
-                    "LaunchTime": "2019-06-21T02:01:39.000Z",
-                    "Monitoring": {
-                        "State": "disabled"
-                    },
-                    "Placement": {
-                        "AvailabilityZone": "us-west-2a",
-                        "GroupName": "",
-                        "Tenancy": "default"
-                    },
-                    "PrivateDnsName": "ip-172-31-26-206.us-west-2.compute.internal",
-                    "PrivateIpAddress": "172.31.26.206",
-                    "ProductCodes": [],
-                    "PublicDnsName": "ec2-34-219-17-93.us-west-2.compute.amazonaws.com",
-                    "PublicIpAddress": "34.219.17.93",
-                    "State": {
-                        "Code": 16,
-                        "Name": "running"
-                    },
-                    "StateTransitionReason": "",
-                    "SubnetId": "subnet-b8767ade",
-                    "VpcId": "vpc-0573be7c",
-                    "Architecture": "x86_64",
-                    "BlockDeviceMappings": [
-                        {
-                            "DeviceName": "/dev/xvda",
-                            "Ebs": {
-                                "AttachTime": "2019-06-21T02:01:40.000Z",
-                                "DeleteOnTermination": true,
-                                "Status": "attached",
-                                "VolumeId": "vol-0a68dd792db2814ed"
-                            }
-                        }
-                    ],
-                    "ClientToken": "brick-MyEC2-1NZOFYDL9RI4I",
-                    "EbsOptimized": false,
-                    "EnaSupport": true,
-                    "Hypervisor": "xen",
-                    "NetworkInterfaces": [
-                        {
-                            "Association": {
-                                "IpOwnerId": "amazon",
-                                "PublicDnsName": "ec2-34-219-17-93.us-west-2.compute.amazonaws.com",
-                                "PublicIp": "34.219.17.93"
-                            },
-                            "Attachment": {
-                                "AttachTime": "2019-06-21T02:01:39.000Z",
-                                "AttachmentId": "eni-attach-0fe94879b6776227d",
-                                "DeleteOnTermination": true,
-                                "DeviceIndex": 0,
-                                "Status": "attached"
-                            },
-                            "Description": "",
-                            "Groups": [
-                                {
-                                    "GroupName": "default",
-                                    "GroupId": "sg-2e94c552"
-                                }
-                            ],
-                            "Ipv6Addresses": [],
-                            "MacAddress": "02:ce:86:43:fe:58",
-                            "NetworkInterfaceId": "eni-01f0f7d03140ae397",
-                            "OwnerId": "799023068955",
-                            "PrivateDnsName": "ip-172-31-26-206.us-west-2.compute.internal",
-                            "PrivateIpAddress": "172.31.26.206",
-                            "PrivateIpAddresses": [
-                                {
-                                    "Association": {
-                                        "IpOwnerId": "amazon",
-                                        "PublicDnsName": "ec2-34-219-17-93.us-west-2.compute.amazonaws.com",
-                                        "PublicIp": "34.219.17.93"
-                                    },
-                                    "Primary": true,
-                                    "PrivateDnsName": "ip-172-31-26-206.us-west-2.compute.internal",
-                                    "PrivateIpAddress": "172.31.26.206"
-                                }
-                            ],
-                            "SourceDestCheck": true,
-                            "Status": "in-use",
-                            "SubnetId": "subnet-b8767ade",
-                            "VpcId": "vpc-0573be7c",
-                            "InterfaceType": "interface"
-                        }
-                    ],
-                    "RootDeviceName": "/dev/xvda",
-                    "RootDeviceType": "ebs",
-                    "SecurityGroups": [
-                        {
-                            "GroupName": "default",
-                            "GroupId": "sg-2e94c552"
-                        }
-                    ],
-                    "SourceDestCheck": true,
-                    "Tags": [
-                        {
-                            "Key": "aws:cloudformation:logical-id",
-                            "Value": "MyEC2Instance"
-                        },
-                        {
-                            "Key": "aws:cloudformation:stack-id",
-                            "Value": "arn:aws:cloudformation:us-west-2:799023068955:stack/brick/7fff2280-93c8-11e9-86f8-0211670049c0"
-                        },
-                        {
-                            "Key": "aws:cloudformation:stack-name",
-                            "Value": "brick"
-                        }
-                    ],
-                    "VirtualizationType": "hvm",
-                    "CpuOptions": {
-                        "CoreCount": 1,
-                        "ThreadsPerCore": 1
-                    },
-                    "CapacityReservationSpecification": {
-                        "CapacityReservationPreference": "open"
-                    },
-                    "HibernationOptions": {
-                        "Configured": false
-                    }
-                }
-            ],
-            "OwnerId": "799023068955",
-            "RequesterId": "658754138699",
-            "ReservationId": "r-00072e975b7d0ac58"
-        },
-        {
-            "Groups": [],
-            "Instances": [
-                {
-                    "AmiLaunchIndex": 0,
                     "ImageId": "ami-0bbe6b35405ecebdb",
                     "InstanceId": "i-0924a5149376f31bd",
                     "InstanceType": "t2.micro",
@@ -248,6 +116,209 @@
             ],
             "OwnerId": "799023068955",
             "ReservationId": "r-0e5edc0514b3fa5ce"
+        },
+        {
+            "Groups": [],
+            "Instances": [
+                {
+                    "AmiLaunchIndex": 0,
+                    "ImageId": "ami-07b4f3c02c7f83d59",
+                    "InstanceId": "i-0b4520c24b1d0a5e4",
+                    "InstanceType": "t2.micro",
+                    "KeyName": "korey-earl-aws",
+                    "LaunchTime": "2019-11-20T22:00:58.000Z",
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "Placement": {
+                        "AvailabilityZone": "us-west-2a",
+                        "GroupName": "",
+                        "Tenancy": "default"
+                    },
+                    "PrivateDnsName": "",
+                    "ProductCodes": [],
+                    "PublicDnsName": "",
+                    "State": {
+                        "Code": 48,
+                        "Name": "terminated"
+                    },
+                    "StateTransitionReason": "User initiated (2019-11-20 22:29:01 GMT)",
+                    "Architecture": "x86_64",
+                    "BlockDeviceMappings": [],
+                    "ClientToken": "brick-MyEC2-N07L37JJSJIH",
+                    "EbsOptimized": false,
+                    "EnaSupport": true,
+                    "Hypervisor": "xen",
+                    "NetworkInterfaces": [],
+                    "RootDeviceName": "/dev/sda1",
+                    "RootDeviceType": "ebs",
+                    "SecurityGroups": [],
+                    "StateReason": {
+                        "Code": "Client.UserInitiatedShutdown",
+                        "Message": "Client.UserInitiatedShutdown: User initiated shutdown"
+                    },
+                    "Tags": [
+                        {
+                            "Key": "aws:cloudformation:stack-id",
+                            "Value": "arn:aws:cloudformation:us-west-2:799023068955:stack/brick-blue/38924a80-0be1-11ea-a319-06d9085df35e"
+                        },
+                        {
+                            "Key": "aws:cloudformation:logical-id",
+                            "Value": "MyEC2Instance"
+                        },
+                        {
+                            "Key": "aws:cloudformation:stack-name",
+                            "Value": "brick-blue"
+                        }
+                    ],
+                    "VirtualizationType": "hvm",
+                    "CpuOptions": {
+                        "CoreCount": 1,
+                        "ThreadsPerCore": 1
+                    },
+                    "CapacityReservationSpecification": {
+                        "CapacityReservationPreference": "open"
+                    },
+                    "HibernationOptions": {
+                        "Configured": false
+                    }
+                }
+            ],
+            "OwnerId": "799023068955",
+            "RequesterId": "658754138699",
+            "ReservationId": "r-015a376d97a652e47"
+        },
+        {
+            "Groups": [],
+            "Instances": [
+                {
+                    "AmiLaunchIndex": 0,
+                    "ImageId": "ami-07b4f3c02c7f83d59",
+                    "InstanceId": "i-08812fb4188d77fd2",
+                    "InstanceType": "t2.micro",
+                    "KeyName": "korey-earl-aws",
+                    "LaunchTime": "2019-11-20T22:42:35.000Z",
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "Placement": {
+                        "AvailabilityZone": "us-west-2a",
+                        "GroupName": "",
+                        "Tenancy": "default"
+                    },
+                    "PrivateDnsName": "ip-172-31-16-247.us-west-2.compute.internal",
+                    "PrivateIpAddress": "172.31.16.247",
+                    "ProductCodes": [],
+                    "PublicDnsName": "ec2-34-212-32-204.us-west-2.compute.amazonaws.com",
+                    "PublicIpAddress": "34.212.32.204",
+                    "State": {
+                        "Code": 16,
+                        "Name": "running"
+                    },
+                    "StateTransitionReason": "",
+                    "SubnetId": "subnet-b8767ade",
+                    "VpcId": "vpc-0573be7c",
+                    "Architecture": "x86_64",
+                    "BlockDeviceMappings": [
+                        {
+                            "DeviceName": "/dev/sda1",
+                            "Ebs": {
+                                "AttachTime": "2019-11-20T22:42:35.000Z",
+                                "DeleteOnTermination": true,
+                                "Status": "attached",
+                                "VolumeId": "vol-0bbfb68adbc092a2a"
+                            }
+                        }
+                    ],
+                    "ClientToken": "brick-MyEC2-1IGU42SS161FI",
+                    "EbsOptimized": false,
+                    "EnaSupport": true,
+                    "Hypervisor": "xen",
+                    "NetworkInterfaces": [
+                        {
+                            "Association": {
+                                "IpOwnerId": "amazon",
+                                "PublicDnsName": "ec2-34-212-32-204.us-west-2.compute.amazonaws.com",
+                                "PublicIp": "34.212.32.204"
+                            },
+                            "Attachment": {
+                                "AttachTime": "2019-11-20T22:42:35.000Z",
+                                "AttachmentId": "eni-attach-07c3731e2defe961a",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 0,
+                                "Status": "attached"
+                            },
+                            "Description": "",
+                            "Groups": [
+                                {
+                                    "GroupName": "launch-wizard-2",
+                                    "GroupId": "sg-0368c81521abc3da7"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "02:4f:34:31:8f:02",
+                            "NetworkInterfaceId": "eni-0cab7e46c13ec5aba",
+                            "OwnerId": "799023068955",
+                            "PrivateDnsName": "ip-172-31-16-247.us-west-2.compute.internal",
+                            "PrivateIpAddress": "172.31.16.247",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Association": {
+                                        "IpOwnerId": "amazon",
+                                        "PublicDnsName": "ec2-34-212-32-204.us-west-2.compute.amazonaws.com",
+                                        "PublicIp": "34.212.32.204"
+                                    },
+                                    "Primary": true,
+                                    "PrivateDnsName": "ip-172-31-16-247.us-west-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.16.247"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-b8767ade",
+                            "VpcId": "vpc-0573be7c",
+                            "InterfaceType": "interface"
+                        }
+                    ],
+                    "RootDeviceName": "/dev/sda1",
+                    "RootDeviceType": "ebs",
+                    "SecurityGroups": [
+                        {
+                            "GroupName": "launch-wizard-2",
+                            "GroupId": "sg-0368c81521abc3da7"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Tags": [
+                        {
+                            "Key": "aws:cloudformation:stack-name",
+                            "Value": "brick-blue"
+                        },
+                        {
+                            "Key": "aws:cloudformation:logical-id",
+                            "Value": "MyEC2Instance"
+                        },
+                        {
+                            "Key": "aws:cloudformation:stack-id",
+                            "Value": "arn:aws:cloudformation:us-west-2:799023068955:stack/brick-blue/09727b70-0be7-11ea-acfe-0a92bf2e649c"
+                        }
+                    ],
+                    "VirtualizationType": "hvm",
+                    "CpuOptions": {
+                        "CoreCount": 1,
+                        "ThreadsPerCore": 1
+                    },
+                    "CapacityReservationSpecification": {
+                        "CapacityReservationPreference": "open"
+                    },
+                    "HibernationOptions": {
+                        "Configured": false
+                    }
+                }
+            ],
+            "OwnerId": "799023068955",
+            "RequesterId": "658754138699",
+            "ReservationId": "r-00024f4c1df527a03"
         }
     ]
 }
