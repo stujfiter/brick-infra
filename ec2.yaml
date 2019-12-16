@@ -1,6 +1,8 @@
 Parameters:
   PostgresPwd:
     Type: String
+  AuthCode:
+    Type: String
 Resources:
   MyEC2Instance:
     Type: "AWS::EC2::Instance"
@@ -23,7 +25,17 @@ Resources:
             sudo systemctl start docker
             sudo systemctl enable docker
             # Install Postgresql
-            sudo apt-get install postgresql -y
+            sudo apt-get install postgresql postgresql-client -y
             echo "host all all 0.0.0.0/0 md5" | sudo tee -a /etc/postgresql/10/main/pg_hba.conf
+            echo "listen_addresses = '*'" | sudo tee -a /etc/postgresql/10/main/postgresql.conf
+            sudo service postgresql restart
             sudo -u postgres psql -c "ALTER USER postgres PASSWORD '${PostgresPwd}';"
             sudo -u postgres psql -c "CREATE DATABASE brick;"
+            # Start App
+            sudo docker run -d \
+              -e POSTGRES_PASSWORD=${PostgresPwd} \
+              -e AUTH_CODE=${AuthCode} \
+              -e STORAGE=POSTGRESQL \
+              -e STORAGE_HOST=172.17.0.1 \
+              -p 5000:5000 \
+              stujfiter/brick-api
