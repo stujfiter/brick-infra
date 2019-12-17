@@ -44,8 +44,14 @@ if [ -z "$authcode" ]; then
   exit 1
 fi
 
+imageid=$(aws ec2 describe-images \
+  --filters "Name=name,Values=*ubuntu-bionic*" \
+  --query 'max_by(Images, &CreationDate).ImageId' \
+  --output text)
+
 aws cloudformation create-stack \
   --stack-name ${stackname} \
   --template-body file://ec2.yaml \
   --parameters ParameterKey=PostgresPwd,ParameterValue=${dbpassword} \
-               ParameterKey=AuthCode,ParameterValue=${authcode}
+               ParameterKey=AuthCode,ParameterValue=${authcode} \
+               ParameterKey=ImageId,ParameterValue=${imageid}

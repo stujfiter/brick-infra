@@ -3,11 +3,13 @@ Parameters:
     Type: String
   AuthCode:
     Type: String
+  ImageId:
+    Type: String
 Resources:
   MyEC2Instance:
     Type: "AWS::EC2::Instance"
     Properties: 
-      ImageId: "ami-07b4f3c02c7f83d59"
+      ImageId: !Ref ImageId
       InstanceType: t2.micro
       KeyName: korey-earl-aws
       SecurityGroups:
@@ -16,16 +18,17 @@ Resources:
         Fn::Base64:
           !Sub |
             #!/bin/bash -xe
-            sudo apt-get update
+            #echo '* libraries/restart-without-asking boolean true' | sudo debconf-set-selections
+            sudo apt-get update -y
             # Install AWS CLI
-            sudo apt-get install python3-pip -y
+            sudo sh -c 'DEBIAN_FRONTEND=noninteractive apt-get install python3-pip -y'
             pip3 install awscli --upgrade
             # Install Docker
             sudo apt-get install docker.io -y
             sudo systemctl start docker
             sudo systemctl enable docker
             # Install Postgresql
-            sudo apt-get install postgresql postgresql-client -y
+            sudo sh -c 'DEBIAN_FRONTEND=noninteractive apt-get install postgresql postgresql-client -y'
             echo "host all all 0.0.0.0/0 md5" | sudo tee -a /etc/postgresql/10/main/pg_hba.conf
             echo "listen_addresses = '*'" | sudo tee -a /etc/postgresql/10/main/postgresql.conf
             sudo service postgresql restart
