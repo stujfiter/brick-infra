@@ -6,6 +6,11 @@ Parameters:
   ImageId:
     Type: String
 Resources:
+  BrickDBInstanceProfile:
+    Type: "AWS::IAM::InstanceProfile"
+    Properties:
+      Roles:
+        - BrickDBServer
   MyEC2Instance:
     Type: "AWS::EC2::Instance"
     Properties: 
@@ -14,6 +19,7 @@ Resources:
       KeyName: korey-earl-aws
       SecurityGroups:
       - launch-wizard-2
+      IamInstanceProfile: !Ref BrickDBInstanceProfile
       UserData:
         Fn::Base64:
           !Sub |

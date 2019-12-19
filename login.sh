@@ -35,6 +35,10 @@ if [ -z "$certificate" ]; then
   exit 1
 fi
 
-instanceId=$(aws cloudformation describe-stack-resources --stack-name ${stackname} | jq -r '.StackResources[] | .PhysicalResourceId')
-publicDnsName=$(aws ec2 describe-instances --instance-ids $instanceId | jq -r '.Reservations[] | .Instances[] | .PublicDnsName')
+instanceId=$(aws cloudformation describe-stack-resources --stack-name ${stackname} \
+  | jq -r '.StackResources[] | select(.LogicalResourceId == "MyEC2Instance") | .PhysicalResourceId')
+
+publicDnsName=$(aws ec2 describe-instances --instance-ids $instanceId \
+  | jq -r '.Reservations[] | .Instances[] | .PublicDnsName')
+  
 ssh -o "StrictHostKeyChecking=no" -i $certificate ubuntu@$publicDnsName

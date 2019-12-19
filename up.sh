@@ -45,13 +45,14 @@ if [ -z "$authcode" ]; then
 fi
 
 imageid=$(aws ec2 describe-images \
-  --filters "Name=name,Values=*ubuntu-bionic*" \
-  --query 'max_by(Images, &CreationDate).ImageId' \
-  --output text)
+  --owners 099720109477 \
+  --filters 'Name=name,Values=ubuntu/images/hvm-ssd/ubuntu-bionic-18.??-amd64-server-????????' 'Name=state,Values=available' \
+  --query 'reverse(sort_by(Images, &CreationDate))[:1].ImageId' --output text)
 
 aws cloudformation create-stack \
   --stack-name ${stackname} \
   --template-body file://ec2.yaml \
+  --capabilities CAPABILITY_NAMED_IAM \
   --parameters ParameterKey=PostgresPwd,ParameterValue=${dbpassword} \
                ParameterKey=AuthCode,ParameterValue=${authcode} \
                ParameterKey=ImageId,ParameterValue=${imageid}
