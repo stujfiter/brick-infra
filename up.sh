@@ -55,4 +55,7 @@ aws cloudformation create-stack \
   --capabilities CAPABILITY_NAMED_IAM \
   --parameters ParameterKey=PostgresPwd,ParameterValue=${dbpassword} \
                ParameterKey=AuthCode,ParameterValue=${authcode} \
-               ParameterKey=ImageId,ParameterValue=${imageid}
+               ParameterKey=ImageId,ParameterValue=${imageid} \
+               ParameterKey=StackName,ParameterValue=${stackname}
+
+aws cloudformation wait stack-create-complete --stack-name ${stackname}

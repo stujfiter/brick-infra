@@ -5,6 +5,8 @@ Parameters:
     Type: String
   ImageId:
     Type: String
+  StackName:
+    Type: String
 Resources:
   BrickDBInstanceProfile:
     Type: "AWS::IAM::InstanceProfile"
@@ -51,3 +53,7 @@ Resources:
               -e STORAGE_HOST=172.17.0.1 \
               -p 5000:5000 \
               stujfiter/brick-api
+            sudo docker run -d \
+              -e API_HOST=${StackName}.domoroboto.com \
+              -p 80:3000 \
+              stujfiter/brick-ui
