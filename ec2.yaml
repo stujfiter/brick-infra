@@ -40,6 +40,9 @@ Resources:
             sudo service postgresql restart
             sudo -u postgres psql -c "ALTER USER postgres PASSWORD '${PostgresPwd}';"
             sudo -u postgres psql -c "CREATE DATABASE brick;"
+            # Restore Database
+            aws s3 cp s3://domoroboto.com/brick.tar brick.tar
+            sudo -u postgres pg_restore -d brick brick.tar
             # Start App
             sudo docker run -d \
               -e POSTGRES_PASSWORD=${PostgresPwd} \
